@@ -60,13 +60,11 @@ class PostController extends Controller
         if ($post) {
             return response()->json([
                 'response' => true,
-
                 'results' => [
-                    "data" => $post,
-                ]    
-            
+                    'data' => $post
+                ],       
             ]);
-        } else return response('', '404');
+        } else return response('', 404);
        
     }
 
