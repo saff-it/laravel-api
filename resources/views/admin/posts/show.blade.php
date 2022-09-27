@@ -10,6 +10,13 @@
           @endif
       </h6>
       <p class="card-text">{{$post -> post_content}}</p>
+      <div class="card-image">
+        @if (filter_var($post->post_image,FILTER_VALIDATE_URL))
+            <img src="{{$post->post_image}}" alt="">
+        @else
+            <img src="{{asset('/storage') . '/'' . $post->post_image'}}" alt="">
+        @endif
+      </div>
     </div>
   </div>
 

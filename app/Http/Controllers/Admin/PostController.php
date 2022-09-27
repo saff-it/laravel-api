@@ -61,11 +61,9 @@ class PostController extends Controller
         $dataInput['post_date'] = new DateTime();
         $dataInput['post_image'] = Storage::put('uploads', $dataInput['post_image']);
 
-        // $post = new Post();
-        // $post -> user_id = $dataInput['user_id']; 
-        // $post -> title = $dataInput['title']; 
-        // $post-> post_content = $dataInput['post_content'];
-        // $post -> post_date = $dataInput['post_date']; 
+        $newPost = new Post();
+        $newPost->fill($dataInput);
+        $newPost->save();
 
         Post::create($dataInput);
 
@@ -109,6 +107,8 @@ class PostController extends Controller
 
         $post = Post::findOrFail($id);
         $post->update($dataInput);
+        $dataInput['post_image'] = Storage::put('uploads', $dataInput['post_image']);
+       
         
         return redirect()->route('admin.posts.show', $post->id);
     }
