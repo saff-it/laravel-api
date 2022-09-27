@@ -46,6 +46,7 @@ class PostController extends Controller
     {
         $dataInput = $request ->all();
 
+        
         $request->validate(
             [
                 'title' =>[

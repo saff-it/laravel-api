@@ -14,7 +14,7 @@
         @if (filter_var($post->post_image,FILTER_VALIDATE_URL))
             <img src="{{$post->post_image}}" alt="">
         @else
-            <img src="{{asset('/storage') . '/'' . $post->post_image'}}" alt="">
+            <img src="{{ asset('/storage') . '/'' . $post->post_image'}}" alt="">
         @endif
       </div>
     </div>
