@@ -31,4 +31,5 @@
     </div>
   </form>
 
+  <input type="file" name="post_image" required>
 @endsection
