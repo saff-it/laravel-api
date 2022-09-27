@@ -1,10 +1,17 @@
 <template>
-  
+  <div>
+        <MainComponent/>>
+  </div>
 </template>
 
 <script>
-export default {
+    import MainComponent from '../components/MainComponent.vue';
 
+export default {
+    
+    components: {
+        MainComponent,
+    }
 }
 </script>
 
