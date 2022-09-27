@@ -1973,7 +1973,11 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_vm._v("\n  ciaooooo\n")]);
+  return _c("main", [_c("ul", _vm._l(_vm.posts, function (post) {
+    return _c("li", {
+      key: post.id
+    }, [_vm._v(" " + _vm._s(post.title))]);
+  }), 0)]);
 };
 
 var staticRenderFns = [];
