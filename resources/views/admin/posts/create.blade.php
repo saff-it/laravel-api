@@ -38,6 +38,6 @@
       </div>
   </form>
 
-  <input type="file" name="post_image_uploaded" required>
+  <input type="file" name="post_image" required>
 </section>
 @endsection

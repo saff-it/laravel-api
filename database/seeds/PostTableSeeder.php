@@ -22,6 +22,7 @@ class PostTableSeeder extends Seeder
             $newPost->title = $faker->realText(50);
             $newPost->post_content = $faker->paragraph(10, true);
             $newPost->post_date = $faker->dateTimeThisYear();
+            $newPost->post_image = '';
 
             $newPost->save();
         }
