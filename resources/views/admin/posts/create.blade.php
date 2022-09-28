@@ -46,5 +46,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
   </form>
+
+  <input type="file" name="post_image_uploaded" required>
 </section>
 @endsection

@@ -45,7 +45,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $dataInput = $request ->all();
-
+        dd($dataInput);
         
         $request->validate(
             [
@@ -54,13 +54,13 @@ class PostController extends Controller
                     'required',
                 ],
                 'post_content' => 'min:3|required',
-                'post_image' => 'img|max:256',
+                'post_image_uploaded' => 'img|max:999',
             ]
         );
 
         $dataInput['user_id'] = Auth::id();
         $dataInput['post_date'] = new DateTime();
-        $dataInput['post_image'] = Storage::put('uploads', $dataInput['post_image']);
+        $dataInput['post_image_uploaded'] = Storage::put('uploads', $dataInput['post_image_uploaded']);
 
         $newPost = new Post();
         $newPost->fill($dataInput);
@@ -108,7 +108,7 @@ class PostController extends Controller
 
         $post = Post::findOrFail($id);
         $post->update($dataInput);
-        $dataInput['post_image'] = Storage::put('uploads', $dataInput['post_image']);
+        $dataInput['post_image_uploaded'] = Storage::put('uploads', $dataInput['post_image_uploaded']);
        
         
         return redirect()->route('admin.posts.show', $post->id);
