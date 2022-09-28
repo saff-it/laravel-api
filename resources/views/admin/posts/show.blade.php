@@ -12,9 +12,9 @@
       <p class="card-text">{{$post -> post_content}}</p>
       <div class="card-image">
         @if (filter_var($post->post_image_uploaded,FILTER_VALIDATE_URL))
-            <img src="{{$post->post_image_uploaded}}" alt="">
+            <img src="{{$post->post_image_uploaded}}" alt="post_img">
         @else
-            <img src="{{ asset('/storage') . '/' . $post->post_image_uploaded'}}" alt="">
+            <img src="{{ asset('storage/') . $post->post_image_uploaded}}" alt="post_img">
         @endif
       </div>
     </div>

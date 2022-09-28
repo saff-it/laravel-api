@@ -45,7 +45,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $dataInput = $request ->all();
-        dd($dataInput);
+        dd($request);
         
         $request->validate(
             [

@@ -22,15 +22,6 @@
           <label for="input-title" class="form-label">Title</label>
           <input type="text" name="title" id="title" class="form-control">
       </div>
-
-      <div class="col-md-6">
-        @if (filter_var($post->post_image, FILTER_VALIDATE_URL))
-            <img class="w-50" src="{{ $post->post_image}}" alt="image">
-        @else
-            <img class="w-50" src="{{ asset('/storage') . '/' . $post->post_image}}" alt="image">
-        @endif
-
-      </div>
   
       <div class="col-12">
         <label for="input-post_content" class="form-label">Post Content</label>

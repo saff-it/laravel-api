@@ -6,11 +6,6 @@
     @csrf
     @method('PUT')
 
-    {{-- <div class="col-md-6">
-      <label for="input-author" class="form-label">Author</label>
-      <input type="text" class="form-control" id="author" name="author">
-    </div> --}}
-
     <div class="col-md-6">
         <label for="input-title" class="form-label">Title</label>
         <input type="text" name="title" id="title" class="form-control">
